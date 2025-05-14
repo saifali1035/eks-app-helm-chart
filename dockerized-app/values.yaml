@@ -7,4 +7,7 @@ frontend:
   image: 549395784991.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
   tag: "2.1.0"
   port: 3000
-  
+
+ingress:
+  enabled: true
+  backendHost: ac7d82b3d71374e83a981ec074ffc2c4-1864906922.ap-south-1.elb.amazonaws.com
