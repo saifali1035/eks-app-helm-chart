@@ -1,20 +1,21 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: backend-ingress
-  namespace: default
+  name: {{ include "mychart.fullname" . }}-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   ingressClassName: nginx
   rules:
-    - host: ac7d82b3d71374e83a981ec074ffc2c4-1864906922.ap-south-1.elb.amazonaws.com  # replace a.b.c.d with actual EXTERNAL-IP
+    - host: {{ .Values.ingress.backendHost }}
       http:
         paths:
           - path: /?(.*)
             pathType: Prefix
             backend:
               service:
-                name: backend
+                name: {{ include "mychart.fullname" . }}-backend
                 port:
                   number: 8080
+{{- end }}
