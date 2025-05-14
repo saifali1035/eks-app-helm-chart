@@ -7,5 +7,5 @@ spec:
     app: frontend
   ports:
     - port: 80
-      targetPort: "{{ .Values.frontend.port }}:{{ .Values.backend.image.tag }}"
+      targetPort: {{ .Values.frontend.port }}
   type: LoadBalancer
