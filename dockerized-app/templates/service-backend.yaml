@@ -7,5 +7,5 @@ spec:
     app: backend
   ports:
     - port: 8080
-      targetPort: {{ .Values.backend.port }}
+      targetPort: "{{ .Values.backend.port }}:{{ .Values.backend.image.tag }}
   type: ClusterIP
