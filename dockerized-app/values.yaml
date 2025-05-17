@@ -10,4 +10,4 @@ frontend:
 
 ingress:
   enabled: true
-  host: ac7d82b3d71374e83a981ec074ffc2c4-1864906922.ap-south-1.elb.amazonaws.com
+  host: app.devopssaif.online
