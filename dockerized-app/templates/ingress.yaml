@@ -18,12 +18,12 @@ spec:
               service:
                 name: backend
                 port:
-                  number: 8080
-          - path: /()(.*)
+                  number: {{ .Values.backend.port }}
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
                 name: frontend
                 port:
-                  number: 3000
+                  number: 80  # Port exposed by frontend service
 {{- end }}
