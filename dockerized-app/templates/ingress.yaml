@@ -18,11 +18,12 @@ spec:
                 name: backend
                 port:
                   number: {{ .Values.backend.port }}
+
           - path: /?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: frontend
                 port:
-                  number: 80
+                  number: {{ .Values.frontend.port }}
 {{- end }}
