@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-      http:
+    - http:
         paths:
           - path: /testdb(/|$)(.*)
             pathType: Prefix
@@ -23,5 +23,5 @@ spec:
               service:
                 name: frontend
                 port:
-                  number: 80  # Port exposed by frontend service
+                  number: 80
 {{- end }}
